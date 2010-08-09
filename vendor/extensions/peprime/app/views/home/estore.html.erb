@@ -1,0 +1,93 @@
+<div class="yui-b" > 
+  <h2>E-Store</h2> 
+   <p> Peprime understand the power of change and innovation. We strive to utilize innovation to add value to lives of the people across the world. Peprime is ever in the business of harnessing technology in innovate ways to add value to our customers and partners. Our vision and greatest commitment remains to add value to lives of the people directly by providing affordable goods and services. </p>
+    <hr />
+</div>
+
+		  <div class="left">
+		    <% unless current_user%>
+          <form name="login" action="/user_session" method="post">
+            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+           
+            <input type="text" id="user_session_login" name="user_session[login]" value="Email" onfocus="cleartxt1('user_session_login');" onblur="check1('user_session_login');" style="color: #999999;width: 125px">
+            <input type="password" id="user_session_password" name="user_session[password]" value="Password" onfocus="cleartxt1('user_session_password');" onblur="check1('user_session_password');" style="color: #999999;width: 125px">
+            <input type="image" src="/login.jpg" border="0" alt="Sign In" title=" Sign In " width="51" height="20" align="absmiddle">
+          </form>
+         <%end-%>
+		   </div>
+		   
+		  <div class="left search">
+			   <% form_tag products_url, :method => :get do %>
+            <%= text_field_tag :keywords, params[:keywords] %>
+            <input type="image" src="/search_button.jpg" border="0" alt="Quick Find" title=" Quick Find " width="51" height="20" align="absmiddle">
+          <% end %>
+      </div>
+      <div class="right">
+          <% if current_user %> 
+            <%= link_to_unless_current t('my_account'), user_path(current_user) %>
+          <%else%>
+            <%= link_to_unless_current t('log_in'), login_path %> 
+          <%end%>&nbsp; |&nbsp; <%= link_to_cart %>  
+          <% if current_user%>
+            &nbsp; |&nbsp; <%= link_to_unless_current t('logout'), logout_path %>
+          <%end%>
+       </div> 
+      <div class="clear"> </div> 
+	    <hr />
+   <div class="wrapper">
+    <% unless @products.blank? %>  
+		<div class='product_sidebar' style = "width: 18%; float: left;">
+		  <% content_for :head do -%>
+        <%= javascript_include_tag :defaults, 'jquery.treeview' %>
+        <%= stylesheet_link_tag 'jquery.treeview' %>
+        <script type="text/javascript">
+          $(document).ready(function(){
+             $("#tree").treeview({
+                 persist: "location",
+		             collapsed: true,
+		             unique: true});
+             });
+        </script> 
+      <% end -%>
+      <h3> Product categories </h3>
+	  
+	    <ul id="tree" class="filetree">
+		   <%= render :partial => 'category', :collection =>  Taxonomy.find_by_name('Categories').root.children  unless Taxonomy.find_by_name('Categories').blank? %>
+	    </ul>
+		</div>
+		<div class='product_container' style = "width: 80%; float: right;">
+		 <ul class="product-listing">
+
+		  <% for i in (0..2) %>
+        <% unless @products[i].blank? %>
+          <li>
+            <%= link_to small_image(@products[i]), @products[i], :title => @products[i].name %>
+             <%= link_to @products[i].name + "<span class='price selling'>$#{@products[i].price}</span>" , @products[i], :title => @products[i].name ,:class=> 'info' %>
+             
+          </li>
+        <%end%>
+      <%end%>
+		  <% for i in (3..5) %>
+        <% unless @products[i].blank? %>
+          <li>
+            <%= link_to small_image(@products[i]), @products[i], :title => @products[i].name  %>
+            <%= link_to @products[i].name + "<span class='price selling'>$#{@products[i].price}</span>" , @products[i], :title => @products[i].name ,:class=> 'info'  %>
+          </li>
+        <%end%>
+      <%end%>
+		  <% for i in (6..8) %>
+        <% unless @products[i].blank? %>
+          <li>
+            <%= link_to small_image(@products[i]), @products[i], :title => @products[i].name unless @products[i].blank? %>
+            <%= link_to @products[i].name + "<span class='price selling'>$#{@products[i].price}</span>" , @products[i], :title => @products[i].name ,:class=> 'info' %>
+          </li> 
+        <%end%>
+      <%end%>   
+     </ul>     
+    </div>
+    <div class="clear"> </div>
+<%end%>
+   </div> 
+ 
+		
+

@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>:: :: WELCOME TO PEPRIME</title>
+<%= stylesheet_link_tag 'base', 'product-listing', 'style','navi'  %>
+<%=javascript_include_tag 'jquery-1.3.2.min','jquery-ui-1.7.1.custom.min','execute','jquery','jquery.innerfade'%>
+    <%= yield :head %>
+  <script type="text/javascript">
+	   $(document).ready(
+				function(){
+					$('#news').innerfade({
+						animationtype: 'slide',
+						speed: 450,
+						timeout: 1000,
+						type: 'random',
+						containerheight: '1em'
+					});
+					
+					$('ul#portfolio').innerfade({
+						speed: 1000,
+						timeout: 4000,
+						type: 'sequence',
+						containerheight: '220px'
+					});
+					
+					$('.fade').innerfade({
+						speed: 1000,
+						timeout: 5000,
+						type: 'random_start',
+						containerheight: '1.5em'
+					});
+					
+					$('.adi').innerfade({
+						speed: 'slow',
+						timeout: 4000,
+						type: 'random',
+						containerheight: '150px'
+					});
+
+			});
+  	</script>
+
+</head>	
+
+<body>
+  <div class="header">
+    <div class="header_left">
+      <img src="/images/logo.gif" />
+    </div>
+
+    <div class="header_right">
+      <ul>
+        <%home = Page.find(1)%>
+        <li><%=link_to "Home",home.link%></li>
+        
+        <%about = Page.find(2)%>
+        <li><%=link_to "About",about.link%></li>
+
+        <%product = Page.find(3)%>
+        <li><%=link_to "Products",product.link%></li>
+
+        <%service = Page.find(4)%>
+        <li><%=link_to "Services",service.link%></li>
+
+	<%partner = Page.find(5)%>
+        <li><%=link_to "Partners",partner.link%></li>
+
+	<li class="last"><%=link_to "Contact us","/contact"%></li>      
+      </ul>
+    </div>
+   </div>  <!--header- end-->
+   
+ <div class="below_header spacing">
+    <ul id="nav-shadow">
+        <%petroleum = Page.find(8)%>
+	<li><%=link_to image_tag('Image2.jpg'),petroleum.link%><p>Petroleum & Petroleum Products</p></li>
+        <%e = Page.find(9)%>
+	<li><%=link_to image_tag('Image3.jpg'),e.link%><p>Energy & Environmental Consultancy</p></li>
+        <%technology = Page.find(10)%>
+	<li><%=link_to image_tag('Image4.jpg'),technology.link%><p>Technology & Develpoment</p></li>
+	<li><%=link_to image_tag('Image5.jpg'), store_path %><p>E-store</p></li>
+    </ul> 
+  </div>
+  <div class="container text_style">
+    <%=yield%>
+  </div>
+   
+  <div class="clear"></div>
+  <div id="footer">
+    <div class="footer">
+     <div class="rt"><a href="#">Home</a> | <%=link_to "Terms of Service","/conditions"%> | <%=link_to "Privacy Policy","/privacy"%></div>
+    <div class="lt"><p>Copyright 2010 Peprime Ltd. All Rights Reserved</p></div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</body>
+</html>

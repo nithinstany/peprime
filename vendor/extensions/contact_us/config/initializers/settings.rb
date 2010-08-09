@@ -1,0 +1,1 @@
+INQUIRY_TYPES = ["Request", "Thanks"]

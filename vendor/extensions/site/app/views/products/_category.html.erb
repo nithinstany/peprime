@@ -1,0 +1,6 @@
+<li> <%= link_to category.name, '/t/' + category.permalink %>
+   <% unless category.children.empty? %>
+     <ul><%= render :partial => '/products/category', :collection => category.children %></ul>
+   <% end %>
+</li>
+

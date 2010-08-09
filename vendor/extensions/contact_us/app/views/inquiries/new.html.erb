@@ -1,0 +1,57 @@
+
+  <h2> Contact us </h2> 
+                 <p> <b>
+				Peprime Ltd <br />
+				19/12 Assembly Street <br />
+				Edinburgh EH6 7BQ <br />
+				United Kingdom <br />
+
+				Phone: +44 (0) 131 5547 546 <br />
+
+				Mobile: +44 (0) 795 0383 847 <br /> 
+
+				E-mail: info@peprime.com <br />
+                       </b>
+                  </p>
+                       
+
+
+<script type="text/javascript">
+	Cufon.replace('h1.form');
+</script>
+
+<h2> Write to us </h2>
+   <%= error_messages_for :inquiry %>
+    <div class="generic_form">
+	<% form_for(:inquiry, :url => collection_url) do |f| %>
+            <table border="0"  cellpadding="5px">
+              
+              <tr> <th><%= f.label :name, "Your name" %></th>
+		       <td><%= f.text_field :name, :class => 'required' %></td>
+		  </tr>
+		  <tr> <th><%= f.label :email, "your email"%></th>
+		       <td><%= f.text_field :email, :class => 'required email' %></td>
+		  </tr>
+		  <tr> <th><%= f.label :name, "Type of enquiry" %></th>
+		       <td><%= f.select :inquiry_type, INQUIRY_TYPES %></td>
+		  </tr> 
+	 
+		  <tr>  <th><%= f.label :message, "Your message"%></th>
+		       <td><%= f.text_area :message, :class => 'required', :size => "150x7" %></td>
+		  </tr> 
+		 
+	       <tr> 
+                 <th></th>
+	         <td><%= submit_tag "Send"%></td>
+	      </tr>            
+         </table>
+	<% end %>
+      </div>
+	<script>
+	  $(document).ready(function(){
+	    $(".generic_form form").validate();
+	  });
+	  </script>
+
+
+                      

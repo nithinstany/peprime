@@ -1,0 +1,38 @@
+
+<h1 class="form"><%= t(:contact_us) %></h1>
+<script type="text/javascript">
+	Cufon.replace('h1.form');
+</script>
+
+<%= error_messages_for :inquiry %>
+<div class="generic_form">
+	<% form_for(:inquiry, :url => collection_url) do |f| %>
+	  <p><%= f.label :name, t(:your_name) %>
+		   <%= f.text_field :name, :class => 'required' %>
+		</p>
+		<p><%= f.label :email, t(:your_email) %>
+		   <%= f.text_field :email, :class => 'required email' %>
+		</p>
+		<p><%= f.label :name, t(:type_inquiry) %>
+		   <%= f.select :inquiry_type, INQUIRY_TYPES %>
+		</p>
+		<p><%= f.label :order_no, t(:number_order) %>
+		   <%= f.text_field :order_no %>
+		</p>
+		<p><%= f.label :message, t(:message) %>
+		   <%= f.text_area :message, :class => 'required' %>
+		</p>
+		<p><%= label_tag 'mailing_list', t(:send_news_and_info) %>
+		   <%= check_box_tag 'mailing_list' %>
+		</p>
+	  <p>
+	    <%= submit_tag t(:send_it) %>
+	  </p>
+	<% end %>
+	<script>
+	  $(document).ready(function(){
+	    $(".generic_form form").validate();
+	  });
+	  </script>
+</div>
+
