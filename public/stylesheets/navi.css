@@ -35,6 +35,8 @@
 
 .header_right li a:hover, ul li.active a{
 	background-color:#4d4d4d;
+	-moz-border-radius:5px;
+	-webkit-border-radius: 5px;
 	color:#fff;
 	}
 	

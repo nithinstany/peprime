@@ -411,8 +411,6 @@ hr.space {border: none; }
     height:30px;
 	border:1px solid #e1e1e1;
 	-moz-border-radius:5px;
-	-moz-border-radius:5px;
-  	-webkit-border-radius: 5px;
 	-webkit-border-radius: 5px;}
 
 .navigation_bar input {
@@ -434,7 +432,7 @@ hr.space {border: none; }
 }
 
 .navigation_bar a{color:#2b5e25;text-decoration:none;}
-
+.navigation_bar a:hover{color:#000;}
 .navigation_bar span{color:#2b5e25;}
 
 .product_sidebar{
