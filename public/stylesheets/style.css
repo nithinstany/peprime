@@ -127,33 +127,35 @@ body {
 
 
 #nav-shadow {
-margin: 0 auto;
-padding: 0px 0 0 0px;
-min-height: 230px;
-width:920px;
-text-align: center;
-list-style: none;
+    margin: 0 auto;
+    padding: 0px 0 0 0px;
+    min-height:230px;
+	    height:auto !important;
+        height:230px;
+    width:920px;
+    text-align: center;
+    list-style: none;
 }
 
 #nav-shadow li {
-width: 220px;
-height:230px;
-position: relative;
-display:inline;
-float:left;
-margin:10px 5px 0px 5px;
-padding:0px;
+    width: 220px;
+    height:230px;
+    position: relative;
+    display:inline;
+    float:left;
+    margin:10px 5px 0px 5px;
+    padding:0px;
 }
 
 #nav-shadow li p{margin-top:35px;font-size:14px; color:#505050; font-weight:bold;}
 
 #nav-shadow a {
-margin: 0 auto;
-width: 220px;
-height: 220px;
-display: block;
-position: relative;
-padding:0px;
+    margin: 0 auto;
+    width: 220px;
+    height: 220px;
+    display: block;
+    position: relative;
+    padding:0px;
 }
 
 
@@ -211,18 +213,6 @@ padding:0px;
 }
 
 
-.text_style ul{
-	margin-left:25px;
-}
-
-
-.text_style ul li{
-    color:#272626;
-	line-height:25px;
-	font-size:13px;
-	padding:5px;
-	list-style:dotted;
-}
 
 .generic_form table tr td input{border:1px solid #bababa;padding:4px 2px;}
 
@@ -242,6 +232,7 @@ legend{
 	margin:0 auto;
 	min-height:400px;
 	height:auto !important;
+    height:400px;
     padding:15px 20px;
 	width:910px;
 	border:1px solid #e1e1e1;
@@ -263,7 +254,9 @@ legend{
 	margin:0px 0px;
 	padding:18px 0px 0px 10px;
 	min-height:425px;
-        float:right;	
+	height:auto !important;
+    height:425px;
+    float:right;	
 }
 
 .sidebar img{margin-top:0px;border:1px solid #ddd;float:left;}
@@ -280,7 +273,7 @@ legend{
 	width:64.5%;
 	min-height:325px;
 	height:auto !important;
-        height:325px;
+    height:325px;
 	float:left;
 	padding:12px;
 	margin-top:5px;
@@ -302,7 +295,7 @@ ul#portfolio li a{margin:0px;padding:0px;}
 	margin:20px 0px 0px 0px;
 	min-height:45px;
 	height:auto !important;
-        height:45px;
+    height:45px;
 	background-color:#fff ;
 	padding:35px 0px 0px 0px;
 	border-top:4px solid #287613;
@@ -348,7 +341,9 @@ ul#portfolio li a{margin:0px;padding:0px;}
   clear: both;
 }
 #product-images #main-image {
-  min-height: 250px;
+  min-height:250px;
+	height:auto !important;
+    height:250px;
   position: relative;
 }
 #product-images #main-image img {
@@ -370,7 +365,7 @@ ul#portfolio li a{margin:0px;padding:0px;}
 }
 
 #product-description p {
-  font-size:11px;
+  font-size:12px;
   line-height:20px;
  }
  
@@ -386,13 +381,93 @@ ul#similar_items_by_taxon li {
 
 ul#similar_items_by_taxon li a {
   font-size:11px;
- 
   color:#324d83;
 }
 
 
-.price.selling { font-size: 1.5em;  color: #2e6ab1;}
 
+h1 {
+  font-weight: normal;
+  color: #222222;
+  font-size: 2em;
+  line-height: 1;
+  margin-bottom: 0.5em;
+}
+div#subtotal {
+  float: right;
+  width: 49%;
+  width: auto;
+  text-align: left;
+}
+ 
+hr.space {border: none; }
+
+.navigation_bar{
+	padding:10px;
+	background:#d9d9d9 url(/images/navigation_bg.jpg) repeat-x;
+	margin:5px 0px;
+	min-height:30px;
+	height:auto !important;
+    height:30px;
+	border:1px solid #e1e1e1;
+	-moz-border-radius:5px;
+	-moz-border-radius:5px;
+  	-webkit-border-radius: 5px;
+	-webkit-border-radius: 5px;}
+
+.navigation_bar input {
+	font-size: 11px;
+        padding:6px 2px;
+	border:1px solid #cccccc;
+	width:200px;
+	background:#fff url(/images/input.png) repeat-x bottom;
+}
+
+.navigation_bar span input {
+	background:url(/images/button.jpg) repeat-x;
+	width:50px;
+	border:none;  
+	padding:5px 2px;
+	color:#fff;
+	-moz-border-radius:5px;
+	-webkit-border-radius: 5px;
+}
+
+.navigation_bar a{color:#2b5e25;text-decoration:none;}
+
+.navigation_bar span{color:#2b5e25;}
+
+.product_sidebar{
+        width:25%;
+	min-height:620px;
+	height:auto !important;
+        height:620px;
+	background: url(/images/product_sidebar.jpg) repeat-y;
+	margin:30px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+        float:left;	
+}
+
+.product_sidebar h3{
+	background-color:#378030;
+	color:#fff;
+	padding:5px;
+	font-size:20px;
+	padding-left:10px;	
+	background: url(/images/sidebar-top.jpg) repeat-x;
+	-moz-border-radius-topleft:5px;
+	-moz-border-radius-topright:5px;
+  	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+}
+
+table#cart-detail { width:99%;}
+table#cart-detail tr th{ padding:10px;}
+table#cart-detail tr td{ padding:10px;}
+table#cart-detail tr td h4 { margin-bottom:10px;}
+table#cart-detail tr td h4 a {color:#265c26;}
+
+table#cart-detail tr th { font-weight:bold;color:#000;border-bottom:1px solid #3a3a3a;}
 
 
 

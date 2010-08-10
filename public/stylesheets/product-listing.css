@@ -1,7 +1,7 @@
 
 .product-listing {
   list-style: none;
-  margin: 2em 0px 0px 0px;
+  margin: 1.5em 0px 0px 20px;
   padding: 0px;
 }
 .product-listing li {
@@ -15,7 +15,7 @@
   margin: 10px;
   padding: 10px;
    border: 1px solid #d0dbd0;
-  background: #a5d5a5;
+  background: #f1e5c6;
   position: relative;
   list-style:none;
 }
@@ -28,7 +28,7 @@
   position: absolute;
   bottom: 0px;
   right: 0px;
-  padding: 5px;
+  padding: 5px 10px;
   width: 175px;
   height: 70px;
   overflow:hidden;

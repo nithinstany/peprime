@@ -53,45 +53,48 @@
 
     <div class="header_right">
       <ul>
-        <%home = Page.find(1)%>
-        <li><%=link_to "Home",home.link%></li>
-        
-        <%about = Page.find(2)%>
-        <li><%=link_to "About",about.link%></li>
-
-        <%product = Page.find(3)%>
-        <li><%=link_to "Products",product.link%></li>
-
-        <%service = Page.find(4)%>
-        <li><%=link_to "Services",service.link%></li>
-
-	<%partner = Page.find(5)%>
-        <li><%=link_to "Partners",partner.link%></li>
-
-	<li class="last"><%=link_to "Contact us","/contact"%></li>      
+         <li><%=link_to "Home", Page.find_by_title('Home').link %></li>
+         <li><%=link_to "About", Page.find_by_title('About').link %></li>
+         <li><%=link_to "Products", Page.find_by_title('Products').link %></li>
+         <li><%=link_to "Services", Page.find_by_title('Services').link %></li>
+         <li><%=link_to "Partners", Page.find_by_title('Partners').link %></li>
+         <li class="last"> <%=link_to "Contact us","/contact"%> </li>      
       </ul>
     </div>
    </div>  <!--header- end-->
    
  <div class="below_header spacing">
     <ul id="nav-shadow">
-        <%petroleum = Page.find(8)%>
-	<li><%=link_to image_tag('Image2.jpg'),petroleum.link%><p>Petroleum & Petroleum Products</p></li>
-        <%e = Page.find(9)%>
-	<li><%=link_to image_tag('Image3.jpg'),e.link%><p>Energy & Environmental Consultancy</p></li>
-        <%technology = Page.find(10)%>
-	<li><%=link_to image_tag('Image4.jpg'),technology.link%><p>Technology & Develpoment</p></li>
-	<li><%=link_to image_tag('Image5.jpg'), store_path %><p>E-store</p></li>
+   	  <li> <%=link_to image_tag('Image2.jpg'), Page.find_by_title('Petroleum & Petroleum Products').link %><p>Petroleum & Petroleum Products</p></li>
+	    <li> <%=link_to image_tag('Image3.jpg'),Page.find_by_title('Energy & Environmental Consultancy').link%><p>Energy & Environmental Consultancy</p></li>
+	    <li> <%=link_to image_tag('Image4.jpg'),Page.find_by_title('Technology & Development').link%><p>Technology & Develpoment</p></li>
+    	<li> <%=link_to image_tag('Image5.jpg'), store_path %><p>E-store</p></li>
     </ul> 
   </div>
   <div class="container text_style">
+        <% if flash[:notice] %>  
+             <p class="notice">  
+               <%= flash[:notice] %>  
+             </p>  
+           <% end %>  
+           <% if flash[:warning] %>  
+             <p class="warning">  
+               <%= flash[:warning] %>  
+             </p>  
+           <% end %>  
+           <% if flash[:error] %>  
+             <p class="error">  
+               <%= flash[:error] %>  
+             </p>  
+           <% end %>  
     <%=yield%>
+     <div class="clear"></div>
   </div>
    
   <div class="clear"></div>
   <div id="footer">
     <div class="footer">
-     <div class="rt"><a href="#">Home</a> | <%=link_to "Terms of Service","/conditions"%> | <%=link_to "Privacy Policy","/privacy"%></div>
+     <div class="rt"><a href="/">Home</a> | <%=link_to "Terms of Service","/conditions"%> | <%=link_to "Privacy Policy","/privacy"%></div>
     <div class="lt"><p>Copyright 2010 Peprime Ltd. All Rights Reserved</p></div>
     </div>
   </div>
