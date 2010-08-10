@@ -34,6 +34,10 @@
 	padding: 3px 0px 3px 16px;
 }
 
+.treeview li  a { 
+  font-size:15px;
+  padding-left:20px;
+}
 
 .treeview a{ background: url(/images/docs_16.gif) no-repeat left;padding-left:20px;}
 

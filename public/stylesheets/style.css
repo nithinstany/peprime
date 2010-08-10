@@ -468,6 +468,14 @@ table#cart-detail tr td h4 { margin-bottom:10px;}
 table#cart-detail tr td h4 a {color:#265c26;}
 
 table#cart-detail tr th { font-weight:bold;color:#000;border-bottom:1px solid #3a3a3a;}
-
+.category-heading { 
+  margin-left:10px;
+  
+}
+.taxon h2 a {
+  margin-left:10px;
+  font-size:18px ;
+  color:#165980;
+}
 
 
