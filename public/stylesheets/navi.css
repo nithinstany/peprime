@@ -20,7 +20,7 @@
 	display:block;
 	margin:0;
 	padding:5px 15px;
-	color:#000;
+	color:green;
 	font-size:18px;
 	text-decoration:none;
 	}
@@ -34,10 +34,10 @@
 	}
 
 .header_right li a:hover, ul li.active a{
-	background-color:#4d4d4d;
+	background-color:green;
 	-moz-border-radius:5px;
 	-webkit-border-radius: 5px;
-	color:#fff;
+	color:white;
 	}
 	
 .header_right li li a:link, li li a:visited{

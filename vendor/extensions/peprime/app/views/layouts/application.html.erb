@@ -48,12 +48,12 @@
 <body>
   <div class="header">
     <div class="header_left">
-      <img src="/images/logo.gif" />
+      <img src="/images/peprime_tm1.gif" />
     </div>
 
     <div class="header_right">
       <ul>
-         <li><%=link_to "Home", Page.find_by_title('Home').link %></li>
+         <li><%=link_to "Home", root_path %></li>
          <li><%=link_to "About", Page.find_by_title('About').link %></li>
          <li><%=link_to "Products", Page.find_by_title('Products').link %></li>
          <li><%=link_to "Services", Page.find_by_title('Services').link %></li>
@@ -65,10 +65,10 @@
    
  <div class="below_header spacing">
     <ul id="nav-shadow">
+          <li> <%=link_to image_tag('Image3.jpg'),Page.find_by_title('Energy & Environment').link%><p>Energy & Environment</p></li>
    	  <li> <%=link_to image_tag('Image2.jpg'), Page.find_by_title('Petroleum & Petroleum Products').link %><p>Petroleum & Petroleum Products</p></li>
-	    <li> <%=link_to image_tag('Image3.jpg'),Page.find_by_title('Energy & Environmental Consultancy').link%><p>Energy & Environmental Consultancy</p></li>
-	    <li> <%=link_to image_tag('Image4.jpg'),Page.find_by_title('Technology & Development').link%><p>Technology & Develpoment</p></li>
-    	<li> <%=link_to image_tag('Image5.jpg'), store_path %><p>E-store</p></li>
+	  <li> <%=link_to image_tag('Technology_ Development.jpg'),Page.find_by_title('Technology  Development').link%><p>Technology Develpoment</p></li>
+    	  <li> <%=link_to image_tag('projectmanagement2.jpg'), Page.find_by_title('Project Management').link%><p>Project Management</p></li>
     </ul> 
   </div>
   <div class="container text_style">
